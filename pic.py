@@ -1,9 +1,6 @@
 import matplotlib.pyplot as plt
-
 from sys import argv
-
 import numpy as np
-
 import numpy as np
 
 def load_data_from_folder(folder):
@@ -16,7 +13,13 @@ def load_data_from_folder(folder):
     return load
 
 
-x, y, ydif = argv
+file_name = argv[1]
+load_data = load_data_from_folder('.')
+data = load_data(file_name)
+
+x = data[:, 0]
+y = data[:, 1]
+ydif = data[:, 2]
 
 fig, ax = plt.subplots()        # Создание поля для рисунка (fig) и осей (ax)
 
